@@ -1,15 +1,15 @@
 <script>
-	import Comp from './Comp.svelte';
+	import Counter from './Counter.svelte';
 	export let name;
 
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>A litte app to practice on the new framework.</p>
 </main>
 
-<Comp/>
+<Counter/>
 
 <style>
 	main {
