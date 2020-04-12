@@ -21,10 +21,6 @@
     }
 </script>
 
-<style>
-
-</style>
-
 <p>My counter</p>
 
 <button on:click={handleClick}>{countText}</button>
