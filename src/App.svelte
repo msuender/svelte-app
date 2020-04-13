@@ -3,6 +3,7 @@
 	import Hiddenline from './Hiddenline.svelte';
 	import Staticlist from './Staticlist.svelte';
 	import Mytable from './Mytable.svelte';
+	import Entertext from './Entertext.svelte';
 	export let name;
 
 </script>
@@ -19,6 +20,8 @@
 <Staticlist/>
 
 <Mytable/>
+
+<Entertext myTitle="My nice title" steil="color:blue"/>
 
 
 <svelte:head>
