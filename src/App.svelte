@@ -1,5 +1,6 @@
 <script>
 	import Counter from './Counter.svelte';
+	import Hiddenline from './Hiddenline.svelte';
 	export let name;
 
 </script>
@@ -10,6 +11,8 @@
 </main>
 
 <Counter/>
+
+<Hiddenline/>
 
 
 <svelte:head>
