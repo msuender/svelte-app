@@ -21,7 +21,7 @@
     }
 </script>
 
-<p>My counter</p>
+<h2>My counter</h2>
 
 <button on:click={handleClick}>{countText}</button>
 <button on:click={resetClick}>Reset Counter</button>
