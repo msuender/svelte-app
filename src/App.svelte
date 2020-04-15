@@ -5,6 +5,7 @@
 	import Mytable from './Mytable.svelte';
 	import Entertext from './Entertext.svelte';
 	import Pressenter from './Pressenter.svelte';
+	import Language from './Language.svelte';
 	export let name;
 
 </script>
@@ -25,6 +26,8 @@
 <Entertext myTitle="My nice title" steil="color:blue"/>
 
 <Pressenter/>
+
+<Language/>
 
 
 <svelte:head>
