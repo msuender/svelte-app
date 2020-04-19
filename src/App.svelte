@@ -6,6 +6,10 @@
 	import Entertext from './Entertext.svelte';
 	import Pressenter from './Pressenter.svelte';
 	import Language from './Language.svelte';
+	import Mainmodule from './Mainmodule.svelte';
+
+	import Jsoninput from './Jsoninput.svelte';
+
 	export let name;
 
 </script>
@@ -14,6 +18,10 @@
 	<h1>Hello {name}!</h1>
 	<p>A litte app to practice on the new framework.</p>
 </main>
+
+<Jsoninput/>
+
+<hr>
 
 <Counter/>
 
@@ -28,6 +36,15 @@
 <Pressenter/>
 
 <Language/>
+
+<Mainmodule/>
+
+<hr>
+
+<div>
+<p>Just plain HTML :-)</p>
+</div>
+
 
 
 <svelte:head>
