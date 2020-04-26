@@ -8,6 +8,7 @@
         
         maxDeepLevel = ( maxDeepLevel || maxDeepLevel == 0 ) ? maxDeepLevel : 20;
         currDeepLevel = currDeepLevel ? currDeepLevel : 1 ;
+        arrayInd = arrayInd ? arrayInd : false;
         
         if( currDeepLevel > maxDeepLevel ){
             return [];
@@ -23,14 +24,35 @@
                     // search again but set paramter to remember if daddy was an Array 
 
                     var daddyIsArray = Array.isArray(currElem);
-                    var deepPaths = getValuePathInObject( currElem, maxDeepLevel, currDeepLevel + 1)
+                    var deepPaths = getValuePathInObject( currElem, maxDeepLevel, currDeepLevel + 1,arrayInd)
                     
                     for(var e=0 ; e<deepPaths.length ; e++){
-
-					paths.push( curr + charSeparator + deepPaths[e]);
                         
+                        var finalString = '';	
+
+                            if (daddyIsArray) {  //refactor the path with index annotation
+
+                                    var splitted = deepPaths[e].split(charSeparator);
+
+                                    for (var p = 0; p < splitted.length; p++) {
+
+                                        if (p === 0) {
+                                            finalString += '[' + splitted[p] + ']' + charSeparator;
+                                        } else if (p === (splitted.length - 1)) {
+                                            finalString += splitted[p];
+                                        } else {
+                                            finalString += splitted[p] + charSeparator;
+                                        }
+                                    }
+
+                                    paths.push( curr + finalString);
+
+                            } else {
+
+                                paths.push( curr + charSeparator + deepPaths[e]);
+                                
+                            }
                     }
-                    
                 } else { // not an object, check if UUID
 
                     if( isValidV4UUID(currElem) ){ 

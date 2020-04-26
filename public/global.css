@@ -53,9 +53,10 @@ button {
 	outline: none;
 }
 
-button:disabled {
-	color: #999;
-}
+button:disabled,button[disabled]{
+    background-color: #cccccc;
+    cursor:not-allowed !important;
+  }
 
 button:not(:disabled):active {
 	background-color: #ddd;
