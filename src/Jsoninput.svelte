@@ -38,9 +38,9 @@
   };
 
   const setSampleInput = () => {
-      textInput1 = JSON.stringify(sampleJSON1, null, '\t');
-      textInput2 = JSON.stringify(sampleJSON2, null, '\t');
-      textInput3 = JSON.stringify(sampleJSON3, null, '\t');
+      textInput1 = JSON.stringify(sampleJSON1, null, 2);
+      textInput2 = JSON.stringify(sampleJSON2, null, 2);
+      textInput3 = JSON.stringify(sampleJSON3, null, 2);
   }
 
   const findUuidsInInput = () => {
@@ -101,9 +101,9 @@
     outputJson = {...workJSON};
   }
 
-$: outputObj1 = JSON.stringify(outputJson.input1, null, '\t');
-$: outputObj2 = JSON.stringify(outputJson.input2, null, '\t');
-$: outputObj3 = JSON.stringify(outputJson.input3, null, '\t');
+$: outputObj1 = JSON.stringify(outputJson.input1, null, 2);
+$: outputObj2 = JSON.stringify(outputJson.input2, null, 2);
+$: outputObj3 = JSON.stringify(outputJson.input3, null, 2);
 
 </script>
 
