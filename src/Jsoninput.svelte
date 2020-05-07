@@ -33,7 +33,10 @@
        try { JSON.parse(textToCheck); 
             inputJson[field] = JSON.parse(textToCheck);
             return true; } 
-       catch (e) { return false; } 
+       catch (e) { 
+           inputJson[field] = {};
+           return false;
+        } 
   };
 
   const setSampleInput = () => {
