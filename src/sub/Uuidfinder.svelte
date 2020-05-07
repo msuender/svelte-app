@@ -1,10 +1,11 @@
 <script context="module">
     
-    const uuidV4Regex = RegExp('^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$');
+    //const uuidV4Regex = RegExp('^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$');
+    const uuidV4Regex = RegExp('^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$');
 
     const isValidV4UUID = (uuid) => uuidV4Regex.test(uuid);
 
-    const getValuePathInObject = (obj, maxDeepLevel, currDeepLevel, arrayInd) => {
+    const getValuePathInObject = (obj, maxDeepLevel, currDeepLevel) => {
         
         maxDeepLevel = ( maxDeepLevel || maxDeepLevel == 0 ) ? maxDeepLevel : 20;
         currDeepLevel = currDeepLevel ? currDeepLevel : 1 ;
@@ -47,7 +48,7 @@
 
     export const findUuids = (data) => {
 
-        let testResult = getValuePathInObject(data,5);
+        let testResult = getValuePathInObject(data,8);
         let resultSet = {};
             
         for (var finding in testResult) {

@@ -24,7 +24,6 @@
     uuidsToReplace = [];
   }
 
-
   $: input1IsJson = isJSON(textInput1, "input1");
   $: input2IsJson = isJSON(textInput2, "input2");
   $: input3IsJson = isJSON(textInput3, "input3");
@@ -233,7 +232,7 @@ textarea {
 
     <h5>Select one or more UUIDs to be replace:</h5>
 
-    <select multiple bind:value={uuidsToReplace}>
+    <select multiple bind:value={uuidsToReplace} size={availableUuids.length}>
         {#each availableUuids as uuid}
             <option value={uuid}>
                 {uuid}
