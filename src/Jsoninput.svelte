@@ -16,13 +16,26 @@
   let outputObj2;
   let outputObj3;
 
-  const clearAll = () => {
-    textInput1 = "";
-    textInput2 = "";
-    textInput3 = "";
+  const clearOrCopy = (whatToDo) => {
+
+      console.log("clearorcopy");
+
+      if (whatToDo === 'copy') {
+            let newInputJson = JSON.parse(JSON.stringify(outputJson));
+            textInput1 = JSON.stringify(newInputJson.input1, null, 2);
+            textInput2 = JSON.stringify(newInputJson.input2, null, 2);
+            textInput3 = JSON.stringify(newInputJson.input3, null, 2);
+      } else {
+            textInput1 = "";
+            textInput2 = "";
+            textInput3 = "";
+      }
+
     uuidsFound = {};
     uuidsToReplace = [];
+    outputJson = {"input1": {}, "input2": {}, "input3": {}};
   }
+
 
   $: input1IsJson = isJSON(textInput1, "input1");
   $: input2IsJson = isJSON(textInput2, "input2");
@@ -135,7 +148,16 @@ textarea {
 
 <h1>UUID Updater</h1>
 
-<button on:click={setSampleInput}>Sample JSON</button>
+<div class="flex-row">
+    <div class="flex-small">
+        <button on:click={setSampleInput}>Sample JSON</button>
+    </div>
+    <div class="flex-small">
+        <button on:click={() => clearOrCopy('copy')} class="accent-button">Copy Output to Input</button>
+    </div>
+
+
+</div>
 
     <div class="flex-container">
 
@@ -213,7 +235,7 @@ textarea {
 
 <button disabled={!input1IsJson && !input2IsJson} on:click={findUuidsInInput}>Finde UUIDs</button>
 
-<button on:click={clearAll}>Reset</button>
+<button on:click={() => clearOrCopy('clear')}>Reset</button>
 
 <h5>Found UUIDs and their path:</h5>
 
