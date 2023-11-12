@@ -7,6 +7,7 @@
 	import Pressenter from './Pressenter.svelte';
 	import Language from './Language.svelte';
 	import Mainmodule from './Mainmodule.svelte';
+	import Download from './Download.svelte';
 
 	import Jsoninput from './Jsoninput.svelte';
 
@@ -44,6 +45,10 @@
 <div>
 <p>Just plain HTML :-)</p>
 </div>
+
+<hr>
+
+<Download />
 
 
 
