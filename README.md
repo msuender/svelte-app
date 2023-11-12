@@ -1,3 +1,8 @@
+> **Note**
+> Repository is outdated, svelte project template got replaced by vite
+
+---
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
